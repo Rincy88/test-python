@@ -12,11 +12,11 @@ jobs:
           echo "$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/languages)"
           echo "Language is $language"
       - name: Install dependencies for Node.js
-        if: ${{env.language  == 'JavaScript' }}
+        if: ${{env.language  == 'js' }}
         run: npm install
         
       - name: Install dependencies for Python
-        if: ${{env.language   == 'Python' }}
+        if: ${{env.language   == 'py' }}
         run: pip install -r requirements.txt
         
       - name: Install dependencies for Ruby
