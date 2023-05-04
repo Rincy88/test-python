@@ -7,9 +7,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: Determine programming language
         id: determine-language 
-        run: |
-          echo "language=$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/languages | jq -r 'keys_unsorted[]' | tail -1)" >> $GITHUB_ENV
-          echo "$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/languages)"
+        run: |      
+          # Determine the repository language based on file extensions
+          LANGUAGE=$(find . -type f -name "*.*" | sed 's/.*\.//' | sort | uniq -c | sort -nr | head -1 | awk '{print $2}')
+          echo "language=${LANGUAGE}" >> $GITHUB_ENV
+          echo "$LANGUAGE"
           echo "Language is $language"
       - name: Install dependencies for Node.js
         if: ${{env.language  == 'js' }}
