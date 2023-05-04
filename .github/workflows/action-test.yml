@@ -10,6 +10,7 @@ jobs:
         run: |
           language=$(echo ${GITHUB_REPOSITORY} | cut -d / -f 1 | xargs -I{} sh -c 'curl -s https://api.github.com/repos/{}/languages | jq -r 'keys_unsorted[]' | tail -1')
           echo "language=$language" >> $GITHUB_ENV
+          echo "Language is $language"
       - name: Install dependencies for Node.js
         if: ${{env.language  == 'JavaScript' }}
         run: npm install
