@@ -9,6 +9,7 @@ jobs:
         id: determine-language 
         run: |
           echo "language=$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/languages | jq -r 'keys_unsorted[]' | tail -1)" >> $GITHUB_ENV
+          echo "$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/languages)"
           echo "Language is $language"
       - name: Install dependencies for Node.js
         if: ${{env.language  == 'JavaScript' }}
