@@ -1,4 +1,4 @@
-name: Build SBOM and send to dt-api
+name: Build SBOM and send to dt-api.
 on: push
 jobs:
   build:
