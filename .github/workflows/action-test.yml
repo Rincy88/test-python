@@ -5,11 +5,29 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
       - uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm install
+      - name: Determine programming language
+        id: determine-language 
+          language=$(echo ${GITHUB_REPOSITORY} | cut -d / -f 1 | xargs -I{} sh -c 'curl -s https://api.github.com/repos/{}/languages | jq -r 'keys_unsorted[]' | tail -1')
+          echo "language=$language" >> $GITHUB_ENV
+      - name: Install dependencies for Node.js
+        if: ${{env.language  == 'JavaScript' }}
+        run: npm install
+        
+      - name: Install dependencies for Python
+        if: ${{env.language   == 'Python' }}
+        run: pip install -r requirements.txt
+        
+      - name: Install dependencies for Ruby
+        if: ${{env.language   == 'Ruby' }}
+        run: bundle install
+        
+      - name: Install dependencies for Java
+        if: ${{ env.language   == 'Java' }}
+        run: mvn install
+        
+      - name: Install dependencies for PHP
+        if: ${{env.language  == 'PHP' }}
+        run: composer install
       - name: Create SBOM with CycloneDX
         id: sbom
         uses: AppThreat/cdxgen-action@v1
