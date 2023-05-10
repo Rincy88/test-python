@@ -3,7 +3,7 @@ jobs:
   myJob:
     runs-on: ubuntu-latest
     steps:
-      - name: Cryptosoft-SBOM-generator.
+      - name: Cryptosoft-SBOM-generator
         id: Cryptosoft-SBOM-generator
         uses: CryptosoftInc/Cryptosoft-SBOM-generator@1.0.0
         with:
