@@ -9,5 +9,5 @@ jobs:
         with:
           dt-url:  "https://dt-api-test-action.staging.cryptosoft.com/api/v1/bom"
           api-key: 'KyIza0zt4LPZAIcap5fbth6dnzcHUFU6 '
-          project-name: "test-python"
+          project-name: "test-action"
           project-version: "1.2.3"
