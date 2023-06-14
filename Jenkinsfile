@@ -39,8 +39,8 @@ pipeline {
                     -H "Content-Type:multipart/form-data" \
                     -H "X-Api-Key:${X_API_KEY}" \
                     -F "autoCreate=true" \
-                    -F "projectName=testJenkins" \
-                    -F "projectVersion=1.24" \
+                    -F "projectName=testPython" \
+                    -F "projectVersion=1.18" \
                     -F "bom=@bom.json"
                     """
                 }
