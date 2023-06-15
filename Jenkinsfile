@@ -40,7 +40,7 @@ pipeline {
                     -H "X-Api-Key:${X_API_KEY}" \
                     -F "autoCreate=true" \
                     -F "projectName=testPython" \
-                    -F "projectVersion=1.18" \
+                    -F "projectVersion=1.23" \
                     -F "bom=@bom.json"
                     """
                 }
