@@ -23,7 +23,6 @@ pipeline {
 
     tools {
         nodejs "node"
-        maven "maven"
     }
 
 
@@ -63,7 +62,7 @@ pipeline {
                     -H "Content-Type:multipart/form-data" \
                     -H "X-Api-Key:${X_API_KEY}" \
                     -F "autoCreate=true" \
-                    -F "projectName=Jenkinsangular" \
+                    -F "projectName=Jenkinspython" \
                     -F "projectVersion=1.22" \
                     -F "bom=@bom.json"
                     """
