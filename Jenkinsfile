@@ -63,7 +63,7 @@ pipeline {
                     -H "X-Api-Key:${X_API_KEY}" \
                     -F "autoCreate=true" \
                     -F "projectName=Jenkinspython" \
-                    -F "projectVersion=1.22" \
+                    -F "projectVersion=1.24" \
                     -F "bom=@bom.json"
                     """
                 }
