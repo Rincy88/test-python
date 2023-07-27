@@ -8,8 +8,8 @@ jobs:
        uses: CryptosoftInc/Aggregate-Sbom@1.0.0
        with: 
            dt-url: "https://dt-api.staging.cryptosoft.com"
-           api-key:  "1DMIXAnGtTIeTQDddlHSvpj6d3as174S"
-           project-name: "test-aggregate-action"
+           api-key:  "${{ secrets.API_KEY }}"
+           project-name: "test-aggregate"
            project-version: "1.0.0"
           
 
