@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
      - name: CryptoSoftInc-Aggregated-SBOM 
-       uses: CryptosoftInc/Aggregate-Sbom-Javascript@1.0.0
+       uses: CryptosoftInc/Aggregate-Sbom@1.0.0
        with: 
            dt-url: "https://dt-api.staging.cryptosoft.com"
            api-key:  "1DMIXAnGtTIeTQDddlHSvpj6d3as174S"
