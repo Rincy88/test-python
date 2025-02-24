@@ -1,15 +1,14 @@
-name: Build SBOM and send to dt-api
+name: Build SBOM and send to dt-api policy.
 on: push
 jobs:
   myJob:
     runs-on: ubuntu-latest 
     steps:
      - name: CryptoSoftInc-Aggregated-SBOM 
-       uses: CryptosoftInc/Aggregate-Sbom@1.0.0
+       uses: CryptosoftInc/Dependency-Track@1.0.0
        with: 
-           dt-url: "https://dt-api.staging.cryptosoft.com"
-           api-key:  "${{ secrets.API_KEY }}"
-           project-name: "test-aggregate"
+           dt-url: "https://dt-api-tech-peat-6.org.dependencytrack.com"
+           api-key:  "odt_q5VU1rIc9gDExpIYPgQRKQUPwc1lPrFL"
+           project-name: "test"
            project-version: "1.0.0"
           
-
