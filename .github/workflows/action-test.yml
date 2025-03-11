@@ -7,8 +7,8 @@ jobs:
      - name: CryptoSoftInc-Aggregated-SBOM 
        uses: CryptosoftInc/Dependency-Track@1.0.0
        with: 
-           dt-url: "https://dt-api-tech-peat-6.org.dependencytrack.com"
-           api-key:  "odt_q5VU1rIc9gDExpIYPgQRKQUPwc1lPrFL"
+           dt-url: "https://dt-api-naresh-testing-prod.org.dependencytrack.com"
+           api-key:  "odt_KLqRXZm8Sinc0FPsDrarDGLwemOpzj72"
            project-name: "test"
            project-version: "1.0.0"
           
